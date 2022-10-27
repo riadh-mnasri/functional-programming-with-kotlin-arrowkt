@@ -3,7 +3,7 @@ package com.riadhmnasri
 import arrow.core.Option
 import arrow.core.Some
 
-/* sealed class Option<out T> {
+/*  sealed class Option<out T> {
     object None : Option<Nothing>() {
         override fun toString() = "None"
     }
