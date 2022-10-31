@@ -58,7 +58,6 @@ fun main() {
     val result4: Either<MyError, Int> = Either.Right(1)
     val result5: Either<MyError, Int> = Either.Right(2)
 
-    // Get or Else
     println(result4.flatMap { x ->
         result5.map { y ->
             x + y
