@@ -10,7 +10,7 @@ suspend fun main() {
     println(getAddressFromOrder(666))
 }
 
-fun getAddressFromOrderOld(orderId: Int) =
+fun getAddressFromOrderClassicWay(orderId: Int) =
     getOrder(orderId).flatMap { order ->
         getCustomer(order.customerId).flatMap { customer ->
             getAddress(customer.addressId)
