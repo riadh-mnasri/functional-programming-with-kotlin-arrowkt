@@ -21,7 +21,7 @@ fun main() {
     }
     println(message)
 
-    // Show Lazy Behviour
+    // Show Lazy Behaviour
     val lazyEval = listOf({ 8 + 2 }, { 7 * 6 }, { 9 / 0 }, { 6 - 5 }).asReversed()
     println(lazyEval)
 
@@ -68,10 +68,12 @@ fun main() {
     // Validated NonEmptyList
     val error1 = MyError("error 1")
     val error2 = MyError("error 2")
-
-    // Monoid - fold list
     val result6 = listOf(error1, error2).invalidNel()
     println(result6.fold({ it }, { it }))
+
+    // Monoid - fold list
+    val list = listOf("Functional ", "Programming ", "With ", "Kotlin ")
+    println(list.fold("Talk: ") { a, b-> a + b})
 
 }
 
