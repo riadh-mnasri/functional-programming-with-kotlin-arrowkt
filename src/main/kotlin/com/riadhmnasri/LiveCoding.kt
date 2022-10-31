@@ -15,6 +15,8 @@ fun main() {
         println("My Lazy call")
         "Hello"
     }
+    println(message)
+
     val lazyEval = listOf({ 8 + 2 }, { 7 * 6 }, { 9 / 0 }, { 6 - 5}).asReversed()
     println(lazyEval)
     listOf(3, 4, 5).map { it + 2 }
@@ -31,6 +33,7 @@ fun main() {
         is Either.Right -> result.value
     }
     println(eval)
+
     // Function Fold
     val eval2 = result.fold(
         { 0 },
@@ -42,7 +45,7 @@ fun main() {
     val result2: Either<MyError, Int> = Either.Left(error)
     val eval3 = result2.getOrElse { 0 }
     println(eval3)
-    // map addresses Right case (transform right value if found else do nothing): Right biased
+    // Map addresses Right case (transform right value if found else do nothing): Right biased
     // flatMap
     val result4: Either<MyError, Int> = Either.Right(1)
     val result5: Either<MyError, Int> = Either.Right(2)
