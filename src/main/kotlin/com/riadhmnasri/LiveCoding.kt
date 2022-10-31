@@ -4,28 +4,33 @@ import arrow.core.*
 
 fun main() {
     // First citizen functions
+    // Declare Function and set it to variable
     val isEven: (Int) -> Boolean = { it % 2 == 0 }
     println(isEven(44))
 
+    // Pass function numberPredicate to function
     val numbers = listOf(7, 9, 8, 5, 4, 8)
     println(numbers.filter { numberPredicate(it) { number -> number % 2 == 0 } })
 
-    // Lazy
+    // Lazy behaviour
+    // By and Lazy keyword
     val message by lazy {
         println("My Lazy call")
         "Hello"
     }
     println(message)
 
+    // Show Lazy Behviour
     val lazyEval = listOf({ 8 + 2 }, { 7 * 6 }, { 9 / 0 }, { 6 - 5}).asReversed()
     println(lazyEval)
     listOf(3, 4, 5).map { it + 2 }
 
-    // Monad : Option fast Demo
+    // Monad : Option fast Demo (map function)
    val myFirstOption: Option<String> =  "Say Hello".toOption()
     println(myFirstOption.map(String::uppercase))
 
     // Either: Deep Demo
+    // Pattern Matching
     val result: Either<MyError, Int> = Either.Right(1)
     // Pattern Matching
     val eval = when(result){
@@ -40,13 +45,13 @@ fun main() {
         { it + 1 }
     )
     println(eval2)
-    // GetOrElse: addresses Left case
+    // Either - GetOrElse: addresses Left case
     val error = MyError("Custom Error")
     val result2: Either<MyError, Int> = Either.Left(error)
     val eval3 = result2.getOrElse { 0 }
     println(eval3)
     // Map addresses Right case (transform right value if found else do nothing): Right biased
-    // flatMap
+    // Either - flatMap/map - pattern
     val result4: Either<MyError, Int> = Either.Right(1)
     val result5: Either<MyError, Int> = Either.Right(2)
     val eval4 = result4.flatMap { x ->
@@ -54,6 +59,7 @@ fun main() {
             x + y
         }
     }
+    // Get or Else
     println(eval4.getOrElse { 0 })
     // Validated NonEmptyList
     val error1 = MyError("error 1")
