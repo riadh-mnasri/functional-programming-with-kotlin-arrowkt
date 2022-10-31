@@ -1,9 +1,0 @@
-#server:
-#  port: 8181
-
-dam:
-  retailerAccessProperties:
-      - name: CASINO
-        url: https://imgart.casinodrive.fr/imageserver/MC2
-      - name: FRANPRIX
-        url: https://todo
