@@ -36,9 +36,3 @@ data class Order(val id: Int, val customerId: Int)
 data class Customer(val addressId: Int)
 
 data class Address(val id: Int)
-
-/*
-private fun <A, B> Either<A, B>.bind(): B {
-
-}
-*/

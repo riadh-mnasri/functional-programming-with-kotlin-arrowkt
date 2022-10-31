@@ -10,6 +10,15 @@ fun main() {
     val numbers = listOf(7, 9, 8, 5, 4, 8)
     println(numbers.filter { numberPredicate(it) { number -> number % 2 == 0 } })
 
+    // Lazy
+    val message by lazy {
+        println("My Lazy call")
+        "Hello"
+    }
+    val lazyEval = listOf({ 8 + 2 }, { 7 * 6 }, { 9 / 0 }, { 6 - 5}).asReversed()
+    println(lazyEval)
+    listOf(3, 4, 5).map { it + 2 }
+
     // Monad : Option fast Demo
    val myFirstOption: Option<String> =  "Say Hello".toOption()
     println(myFirstOption.map(String::uppercase))
