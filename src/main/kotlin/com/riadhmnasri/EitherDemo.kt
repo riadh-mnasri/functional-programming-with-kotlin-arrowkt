@@ -3,7 +3,6 @@ package com.riadhmnasri
 import arrow.core.Either
 import arrow.core.flatMap
 import arrow.core.getOrElse
-import kotlin.math.max
 
 fun main() {
     val result: Either<MyError, Int> = Either.Right(1)
@@ -37,4 +36,3 @@ fun main() {
 
 }
 
-data class MyError(val message: String)
