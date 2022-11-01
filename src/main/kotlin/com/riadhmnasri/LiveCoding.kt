@@ -57,7 +57,7 @@ fun main() {
         }.getOrElse { "" }
     )
 
-    // Validated NonEmptyList/invalidNel
+    // Validated NonEmptyList/invalidNel/flatten
     val error1 = MyError("error 1")
     val error2 = MyError("error 2")
     val test = listOf(error1, error2).invalidNel()
